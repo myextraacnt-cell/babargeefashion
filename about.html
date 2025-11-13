@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Babar Gee Fashion | Get in Touch</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(128, 0, 0, 0.8), rgba(212, 175, 55, 0.6));
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #800000, #D4AF37);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .maroon-bg { background-color: #800000; }
+        .gold-bg { background-color: #D4AF37; }
+        .blush-bg { background-color: #F5C6C6; }
+        .cream-bg { background-color: #FDF5E6; }
+        .charcoal-bg { background-color: #333333; }
+        
+        .text-maroon { color: #800000; }
+        .text-gold { color: #D4AF37; }
+        .text-charcoal { color: #333333; }
+        
+        .hover\:text-gold:hover { color: #D4AF37; }
+        .hover\:text-maroon:hover { color: #800000; }
+        .hover\:bg-gold:hover { background-color: #D4AF37; }
+        .hover\:bg-maroon:hover { background-color: #800000; }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #800000;
+            box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+        }
+        
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .business-hours {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .contact-success {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(400px); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Top Header -->
+    <div class="bg-black py-2 text-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="text-white">📞 +923153446770</span>
+                <span class="text-white">✉️ babargeefashion@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://www.instagram.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.pinterest.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+<nav class="blush-bg shadow-lg sticky top-0 z-50 sticky-nav" id="navbar">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <!-- Google Fonts link (paste this in <head> section) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- 🔸 Logo + Name -->
+<div style="display: flex; align-items: center; gap: 12px;">
+  <h1 style="
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: maroon;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+    white-space: nowrap;
+  ">
+    <span style="font-family: 'Great Vibes', cursive; color: #b22222; font-size: 48px;">Babar Gee Fashion</span>
+  </h1>
+
+  <img src="images/logo.png" alt="Babar Gee Fashion Logo"
+       style="width: 90px; height: 90spx; object-fit: contain; animation: fadeIn 1.5s ease-in-out;">
+</div>
+
+<!-- Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- 🔸 Navigation Links -->
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Home</a>
+      <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-semibold">About</a>
+      <a href="shop.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Shop</a>
+      <a href="services.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Services</a>
+      <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Contact</a>
+    </div>
+
+    <!-- 🔸 Order Button + Mobile Toggle -->
+    <div class="flex items-center space-x-4">
+      <a href="order.html"
+         style="background-color: #81cbca;" 
+         class="text-white hover:bg-maroon px-6 py-2 rounded-lg font-semibold transition-colors">
+         <i class="fas fa-shopping-cart mr-2"></i>Order Now
+      </a>
+      <button class="md:hidden text-charcoal" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- 🔸 Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden pb-4 text-center">
+    <a href="index.html" class="block py-2 text-charcoal hover:text-gold">Home</a>
+    <a href="about.html" class="block py-2 text-charcoal hover:text-gold">About</a>
+    <a href="shop.html" class="block py-2 text-charcoal hover:text-gold">Shop</a>
+    <a href="services.html" class="block py-2 text-charcoal hover:text-gold">Services</a>
+    <a href="contact.html" class="block py-2 text-charcoal hover:text-gold">Contact</a>
+  </div>
+</nav>
+
+<!-- 🔸 Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+    <!-- Breadcrumb -->
+    <div class="bg-[#FDF5E6] py-3">
+  <div class="container mx-auto px-4">
+    <nav class="text-sm text-[#800000]">
+      <a href="index.html" class="text-[#800000] hover:text-[#D4AF37]">Home</a>
+      <span class="text-[#D4AF37] mx-2">></span>
+      <span class="text-[#800000] font-semibold" id="breadcrumb">Shop</span>
+    </nav>
+  </div>
+</div>
+
+
+    <!-- Page Header with Image -->
+<section class="relative h-96 flex items-center justify-center overflow-hidden">
+    
+    <!-- Image Background -->
+    <img src="images/aboutban.webp" alt="Banner Image" class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Optional Overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 text-center text-white px-4">
+        <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-4">
+            About Us!
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl mx-auto">
+            Crafting Your Dream Dresses | Bespoke Designs Tailored to Perfection | Global Shipping | DM to Create Your Unique Masterpiece!
+        </p>
+    </div>
+</section>
+
+
+    <!-- Brand Story / Introduction -->
+    <section class="py-16 cream-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="font-playfair text-4xl font-bold text-maroon mb-8">Our Story</h2>
+                        <div class="space-y-6 text-charcoal text-lg leading-relaxed">
+                            <p>
+                                Founded in <strong class="text-maroon">1982</strong> in the historic city of Sukkur, Babar Gee Fashion has been a cornerstone of Pakistani fashion excellence for over four decades. What began as a small boutique has grown into a trusted name in high-quality stitched suits, embroidered lehengas, and elegant maxis.
+                            </p>
+                            <p>
+                                With <strong class="text-maroon">42+ years</strong> of hands-on experience in ladies fashion, our expertise spans intricate embroidery work, precision pattern making, and custom design creation. Every piece that leaves our workshop carries the legacy of traditional Pakistani craftsmanship combined with contemporary elegance.
+                            </p>
+                            <p>
+                                Our commitment to quality extends beyond borders. We take pride in serving customers worldwide, delivering handcrafted elegance from Pakistan to doorsteps across the globe. From intimate custom orders to large bulk collections, each project receives our unwavering attention to detail.
+                            </p>
+                            <p>
+                                At Babar Gee Fashion, we don't just create clothing – we craft memories, celebrate traditions, and honor the timeless art of Pakistani fashion.
+                            </p>
+                        </div>
+                        
+                        <!-- Quote Box -->
+                        <div class="quote-box p-6 mt-8 rounded-lg">
+                            <p class="text-maroon text-xl font-inter text-center">
+                                "Elegance in every stitch, tradition in every thread"
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Designer at work representation -->
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                            <section class=""text-center py-10 >
+                                <!--image small and round -->
+                                <img src="images/img1.jpg" alt="" class="mx-auto w-64 h-64 object-cover rounded-full shadow-lg mb-6" />
+                                
+                            <h3 class="font-playfair text-xl font-semibold text-maroon mb-2">Custom Designs</h3>
+                            <p class="text-charcoal">Personalized patterns and unique creations</p>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                            <section class=""text-center py-10 >
+                                <!--image small and round -->
+                                <img src="images/img2.jpg" alt="" class="mx-auto w-64 h-64 object-cover rounded-full shadow-lg mb-6" />
+                                
+                            <h3 class="font-playfair text-xl font-semibold text-maroon mb-2">Custom Designs</h3>
+                            <p class="text-charcoal">Personalized patterns and unique creations</p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                            <section class=""text-center py-10 >
+                                <!--image small and round -->
+                                <img src="images/img3.jpg" alt="" class="mx-auto w-64 h-64 object-cover rounded-full shadow-lg mb-6" />
+
+                            <h3 class="font-playfair text-xl font-semibold text-maroon mb-2">Global Reach</h3>
+                            <p class="text-charcoal">International shipping and worldwide service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 cream-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-playfair text-4xl font-bold text-center text-maroon mb-12">Mission & Vision</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Mission Card -->
+                    <div class="card-hover blush-bg p-8 rounded-lg shadow-lg border border-gray-100">
+                        <div class="text-center mb-6">
+                            <div class="gold-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-bullseye text-white text-2xl"></i>
+                            </div>
+                            <h3 class="font-playfair text-2xl font-bold text-maroon">Our Mission</h3>
+                        </div>
+                        <p class="text-charcoal text-lg leading-relaxed text-center">
+                            To deliver high-quality handcrafted Pakistani clothing worldwide, preserving traditional embroidery techniques while embracing contemporary designs. We strive to make authentic Pakistani fashion accessible to customers across the globe through exceptional craftsmanship and personalized service.
+                        </p>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="card-hover blush-bg p-8 rounded-lg shadow-lg border border-gray-100">
+                        <div class="text-center mb-6">
+                            <div class="gold-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-eye text-white text-2xl"></i>
+                            </div>
+                            <h3 class="font-playfair text-2xl font-bold text-maroon">Our Vision</h3>
+                        </div>
+                        <p class="text-charcoal text-lg leading-relaxed text-center">
+                            To be recognized as a trusted international brand for boutique Pakistani fashion, known for our commitment to quality, cultural authenticity, and customer satisfaction. We envision expanding our reach while maintaining the personal touch that defines our brand.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Milestones / Timeline -->
+    <section class="py-16 cream-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-playfair text-4xl font-bold text-center text-maroon mb-12">Our Journey</h2>
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-lg ml-4">
+                            <div class="flex items-center mb-4">
+                                <span class="text-2xl font-bold text-maroon mr-4">1982</span>
+                                <h3 class="font-playfair text-xl font-semibold text-charcoal">Babar Gee Fashion Established</h3>
+                            </div>
+                            <p class="text-charcoal">
+                                Founded in Sukkur with a vision to create exceptional Pakistani fashion. Started as a small boutique specializing in traditional stitched suits and embroidered garments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-lg ml-4">
+                            <div class="flex items-center mb-4">
+                                <span class="text-2xl font-bold text-maroon mr-4">2017</span>
+                                <h3 class="font-playfair text-xl font-semibold text-charcoal">Expanded Boutique & Embroidery Services</h3>
+                            </div>
+                            <p class="text-charcoal">
+                                Expanded operations to include advanced embroidery services and custom design capabilities. Began accepting bulk orders and established international shipping services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-lg ml-4">
+                            <div class="flex items-center mb-4">
+                                <span class="text-2xl font-bold text-maroon mr-4">2025</span>
+                                <h3 class="font-playfair text-xl font-semibold text-charcoal">Serving Pakistani & International Clients</h3>
+                            </div>
+                            <p class="text-charcoal">
+                                Today, we proudly serve customers across Pakistan and internationally, maintaining our commitment to quality while embracing digital platforms to reach fashion enthusiasts worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Why Choose Us -->
+    <section class="py-16 blush-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-playfair text-4xl font-bold text-center text-maroon mb-12">Our Expertise</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-award text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-3">42+ Years Experience</h3>
+                        <p class="text-charcoal">Over four decades of expertise in Pakistani ladies fashion and traditional craftsmanship</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-hand-sparkles text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-3">Hand Embroidery & Stitching</h3>
+                        <p class="text-charcoal">Intricate hand embroidery work and precision stitching by skilled artisans</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-shipping-fast text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-3">Bulk Orders & International Shipping</h3>
+                        <p class="text-charcoal">Reliable worldwide delivery and bulk order capabilities for boutiques and retailers</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-gem text-white text-3xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-3">Quality Assurance & Attention to Detail</h3>
+                        <p class="text-charcoal">Meticulous quality control and unwavering attention to every detail in our creations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal / Promotional Banner -->
+<section class="promo-banner py-16 text-white relative overflow-hidden">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="video/bsilk.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    
+    <!-- Text Content -->
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto fade-in">                
+            <h2 class="font-playfair text-5xl font-bold mb-6">We Are Now Taking Orders</h2>
+            <p class="text-xl mb-8">
+                Worldwide Delievery Of customized & Stitched outfits
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="shop.html#lawn" class="bg-white text-maroon hover:bg-gold hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-shopping-bag mr-2"></i>Shop Lawn Collection
+                </a>
+                <a href="order.html" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team - Babar Gee Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'maroon': '#800020',
+                        'gold': '#D4AF37',
+                        'cream': '#F8F6F0'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter">
+    <!-- Meet Our Team Section -->
+    <section class="team py-24 bg-gradient-to-br from-cream via-white to-gray-50 text-center relative overflow-hidden">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-gold rounded-full"></div>
+            <div class="absolute bottom-20 right-10 w-24 h-24 bg-maroon rounded-full"></div>
+            <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-gold rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Title -->
+            <div class="mb-16">
+                <h2 class="font-playfair text-6xl font-bold text-maroon mb-6 tracking-wide">Meet Our Team</h2>
+                <div class="w-32 h-1.5 bg-gradient-to-r from-gold to-maroon mx-auto mb-6 rounded-full"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    The passionate professionals behind Babar Gee Fashion's excellence and innovation
+                </p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto mb-16">
+                
+                <!-- CEO -->
+                <div class="bg-white shadow-xl rounded-2xl p-10 hover:shadow-2xl hover:scale-105 transition-all duration-500 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold to-transparent opacity-20 rounded-bl-full"></div>
+                    <div class="text-6xl mb-6"></div>
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-3">Khursheed Ahmed</h3>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-3"></div>
+                    <p class="text-gold font-semibold text-lg mb-4">Chief Executive Officer</p>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Visionary leader driving Babar Gee Fashion's strategic growth and innovation. 
+                        With years of industry expertise, he ensures our commitment to excellence, 
+                        quality craftsmanship, and customer satisfaction remains at the heart of everything we do.
+                    </p>
+                </div>
+
+                <!-- Managing Team -->
+                <div class="bg-white shadow-xl rounded-2xl p-10 hover:shadow-2xl hover:scale-105 transition-all duration-500 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-maroon to-transparent opacity-20 rounded-bl-full"></div>
+                    <div class="text-6xl mb-6"></div>
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-3">Zain Rajput</h3>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-3"></div>
+                    <p class="text-gold font-semibold text-lg mb-4">Managing Team Lead</p>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Strategic operations manager orchestrating seamless workflow and team coordination. 
+                        Zain ensures efficient project management, quality control, and timely delivery 
+                        while maintaining our high standards of craftsmanship and customer service.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Lower Team Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
+                <!-- Fashion Designers -->
+                <div class="bg-white shadow-xl rounded-2xl p-10 hover:shadow-2xl hover:scale-105 transition-all duration-500 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gold to-transparent opacity-20 rounded-bl-full"></div>
+                    <div class="text-6xl mb-6">🎨</div>
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-3">Fashion Designers</h3>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-3"></div>
+                    <p class="text-gold font-semibold text-lg mb-4">3 Creative Visionaries</p>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Talented creative minds who transform concepts into stunning fashion pieces. 
+                        Our designers blend contemporary trends with traditional craftsmanship, 
+                        creating unique collections that reflect elegance, style, and cultural heritage.
+                    </p>
+                </div>
+
+                <!-- Skilled Workers -->
+                <div class="bg-white shadow-xl rounded-2xl p-10 hover:shadow-2xl hover:scale-105 transition-all duration-500 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-maroon to-transparent opacity-20 rounded-bl-full"></div>
+                    <div class="text-6xl mb-6">✂️</div>
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-3">Skilled Workers</h3>
+                    <div class="w-16 h-0.5 bg-gold mx-auto mb-3"></div>
+                    <p class="text-gold font-semibold text-lg mb-4">20+ Master Artisans</p>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Expert craftspeople with years of experience in precision stitching, intricate embroidery, 
+                        and fine detailing. Their dedication to perfection and attention to detail ensures 
+                        every garment meets our exceptional quality standards.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Decorative Element -->
+            <div class="mt-16">
+                <div class="flex justify-center items-center space-x-4">
+                    <div class="w-8 h-0.5 bg-gold"></div>
+                    <div class="w-3 h-3 bg-maroon rounded-full"></div>
+                    <div class="w-12 h-0.5 bg-gradient-to-r from-gold to-maroon"></div>
+                    <div class="w-3 h-3 bg-gold rounded-full"></div>
+                    <div class="w-8 h-0.5 bg-maroon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a9a1d69116c976',t:'MTc1NzExNjI2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
+
+    <!-- Call to Action -->
+    <section class="py-16 maroon-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-6">Ready to Experience Our Craftsmanship?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Join thousands of satisfied customers worldwide. Contact us today for custom designs, bulk orders, or any inquiries about our services.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/923153446770" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Us
+                </a>
+                <a href="mailto:babargeefashion@gmail.com" class="bg-white text-gold hover:bg-gold hover:text-maroon px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-2"></i> Email Us
+                </a>
+                <a href="index.html" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                    View Collections
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 maroon-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-6">Order Your Custom Design Today</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Ready to create something beautiful? Contact us for custom designs, bulk orders, or any inquiries.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/923153446770" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order
+                </a>
+                <a href="mailto:babargeefashion@gmail.com" class="bg-white text-gold hover:bg-gold hover:text-maroon px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-2"></i> Email Us
+                </a>
+                <button onclick="scrollToSection('collections')" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                    Shop Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="font-playfair text-2xl font-bold text-charcoal mb-4">Stay Updated</h3>
+    <p class="text-charcoal mb-6">Get the latest designs and exclusive offers delivered to your inbox</p>
+
+    <form action="https://formspree.io/f/xblpznnr" method="POST" class="max-w-md mx-auto flex">
+      <input type="email" name="email" placeholder="Enter your email"
+             class="flex-1 px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:border-maroon cream-bg"
+             required>
+      <button type="submit"
+              class="gold-bg text-maroon hover:bg-maroon hover:text-gold px-6 py-3 rounded-r-lg font-semibold transition-colors">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer id="contact" class="charcoal-bg text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold text-gold mb-4">Babar Gee Fashion</h3>
+                    <p class="text-white mb-4">
+                        Handcrafted Pakistani fashion since 1982. Bringing elegance and tradition to the world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.facebook.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.pinterest.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-pinterest text-xl"></i></a>
+                        <a href="https://www.youtube.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home.html" class="text-white hover:text-gold">Home</a></li>
+                        <li><a href="#about.html" class="text-white hover:text-gold">About</a></li>
+                        <li><a href="#shop.html" class="text-white hover:text-gold">Shop</a></li>
+                        <li><a href="#order.html" class="text-white hover:text-gold">Order Now</a></li>
+                        <li><a href="#contact.html" class="text-white hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-white">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Near Imam Bargah, M. Shah Market<br>Neem Ki Chari, Sukkur</p>
+                        <p><i class="fas fa-phone mr-2"></i>+923153446770</p>
+                        <p><i class="fas fa-envelope mr-2"></i>babargeefashion@gmail.com</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-white">
+                        <li>Custom Stitched Suits</li>
+                        <li>Embroidered Lehengas</li>
+                        <li>Designer Maxis</li>
+                        <li>Bulk Orders</li>
+                        <li>International Shipping</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-white">
+                <p>&copy; 2025 Babar Gee Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923153446770" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for internal links
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Add smooth scroll behavior to all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Timeline animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a1b142c07dc976',t:'MTc1NzAzMzAwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
