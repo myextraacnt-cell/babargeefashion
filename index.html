@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babar Gee Fashion - Ultimate Boutique | Handcrafted Pakistani Fashion Since 1982</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Custom Colors */
+        .maroon-bg { background-color: #800000; }
+        .gold-bg { background-color: #D4AF37; }
+        .blush-bg { background-color: #F5C6C6; }
+        .cream-bg { background-color: #FDF5E6; }
+        .charcoal-bg { background-color: #333333; }
+        
+        .text-maroon { color: #800000; }
+        .text-gold { color: #D4AF37; }
+        .text-charcoal { color: #333333; }
+        
+        .hover\:text-gold:hover { color: #D4AF37; }
+        .hover\:text-maroon:hover { color: #800000; }
+        .hover\:bg-gold:hover { background-color: #D4AF37; }
+        .hover\:bg-maroon:hover { background-color: #800000; }
+        
+        /* Hero Video Simulation */
+        .hero-video {
+            background: linear-gradient(45deg, #800000, #D4AF37, #800000);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-video::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.0);
+            z-index: 1;
+        }
+        
+        .hero-video::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Collection Cards */
+        .collection-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .collection-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.0);
+        }
+        
+        .collection-card:hover .collection-overlay {
+            background: rgba(212, 175, 55, 0.8);
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.0);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Product Cards */
+        .product-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.0);
+        }
+        
+        /* Sticky Navigation */
+        .sticky-nav {
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.0);
+        }
+        
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Carousel */
+        .carousel-container {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Instagram Feed */
+        .instagram-post {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .instagram-post:hover {
+            transform: scale(1.02);
+        }
+        
+        .instagram-post:hover .instagram-overlay {
+            opacity: 1;
+        }
+        
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.0);
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Promotional Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, #800000, #D4AF37);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Services Icons */
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .service-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Top Header -->
+    <div class="bg-black py-2 text-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="text-white">📞 +923153446770</span>
+                <span class="text-white">✉️ babargeefashion@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://www.instagram.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.pinterest.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+<nav class="blush-bg shadow-lg sticky top-0 z-50 sticky-nav" id="navbar">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <!-- Google Fonts link (paste this in <head> section) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- 🔸 Logo + Name -->
+<div style="display: flex; align-items: center; gap: 12px;">
+  <h1 style="
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: maroon;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+    white-space: nowrap;
+  ">
+    <span style="font-family: 'Great Vibes', cursive; color: #b22222; font-size: 48px;">Babar Gee Fashion</span>
+  </h1>
+
+  <img src="images/logo.png" alt="Babar Gee Fashion Logo"
+       style="width: 90px; height: 90px; object-fit: contain; animation: fadeIn 1.5s ease-in-out;">
+</div>
+
+<!-- Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- 🔸 Navigation Links -->
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Home</a>
+      <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-semibold">About</a>
+      <a href="shop.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Shop</a>
+      <a href="services.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Services</a>
+      <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Contact</a>
+    </div>
+
+    <!-- 🔸 Order Button + Mobile Toggle -->
+    <div class="flex items-center space-x-4">
+      <a href="order.html"
+         style="background-color: #81cbca;" 
+         class="text-white hover:bg-maroon px-6 py-2 rounded-lg font-semibold transition-colors">
+         <i class="fas fa-shopping-cart mr-2"></i>Order Now
+      </a>
+      <button class="md:hidden text-charcoal" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- 🔸 Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden pb-4 text-center">
+    <a href="index.html" class="block py-2 text-charcoal hover:text-gold">Home</a>
+    <a href="about.html" class="block py-2 text-charcoal hover:text-gold">About</a>
+    <a href="shop.html" class="block py-2 text-charcoal hover:text-gold">Shop</a>
+    <a href="services.html" class="block py-2 text-charcoal hover:text-gold">Services</a>
+    <a href="contact.html" class="block py-2 text-charcoal hover:text-gold">Contact</a>
+  </div>
+</nav>
+
+<!-- 🔸 Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+    <!-- Hero Section / Full-Screen Video -->
+    <section id="home" class="hero-video h-screen flex items-center justify-center relative">
+        <!-- Background video -->
+<div class="absolute inset-0">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <source src="video/vid1.mp4" type="video/mp4">
+  </video>
+
+  <!-- Optional dark overlay to make white text readable -->
+  <div class="absolute inset-0 bg-black/30"></div>
+</div>
+
+<!-- Hero text content -->
+<div class="relative z-10 text-center text-white px-4">
+  <h1 class="font-playfair text-6xl md:text-8xl font-bold mb-6 animate-pulse">
+    Elegance in Every Stitch
+  </h1>
+  <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+    Handcrafted Pakistani Fashion Since 1982 - Where Tradition Meets Modern Elegance
+  </p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="shop.html" class="gold-bg text-white hover:bg-white hover:text-gold px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+      <i class="fas fa-shopping-bag mr-2"></i> Shop Now
+    </a>
+    <a href="order.html" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+      <i class="fas fa-shopping-cart mr-2"></i> Order Now
+    </a>
+  </div>
+</div>
+
+
+    </section>
+
+    <!-- Collections / Interactive Categories -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="font-playfair text-5xl font-bold text-maroon mb-6">Our Exclusive Collections</h2>
+                    <p class="text-xl text-charcoal max-w-2xl mx-auto">
+                        Discover our handcrafted collections, each piece telling a story of tradition and elegance
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Lawn Collection -->
+                    <div class="collection-card bg-gradient-to-br from-green-200 to-emerald-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#lawn'">
+                        <img src="images/lawn1.jpg" alt="Lawn Collection" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Lawn Collection</h3>
+                                <p class="text-lg">Summer Comfort</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Winter Collection -->
+                    <div class="collection-card bg-gradient-to-br from-blue-200 to-indigo-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#winter'">
+                        <img src="images/winter1.jpg" alt="Winter Collection" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Winter Collection</h3>
+                                <p class="text-lg">Warm Elegance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bridal Wear -->
+                    <div class="collection-card bg-gradient-to-br from-pink-200 to-rose-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#bridal'">
+                        <img src="images/bridal1.jpg" alt="Bridal Wear" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Bridal Wear</h3>
+                                <p class="text-lg">Dream Wedding</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Party Wear -->
+                    <div class="collection-card bg-gradient-to-br from-purple-200 to-violet-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#party'">
+                        <img src="images/party1.jpg" alt="Party Wear" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Party Wear</h3>
+                                <p class="text-lg">Glamorous Nights</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formal Wear -->
+                    <div class="collection-card bg-gradient-to-br from-gray-200 to-slate-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#formal'">
+                        <img src="images/formal1.jpg" alt="Formal Wear" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Formal Wear</h3>
+                                <p class="text-lg">Professional Style</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Casual Wear -->
+                    <div class="collection-card bg-gradient-to-br from-yellow-200 to-orange-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#casual'">
+                        <img src="images/casual1.jpg" alt="Casual Wear" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Casual Wear</h3>
+                                <p class="text-lg">Everyday Comfort</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accessories -->
+                    <div class="collection-card bg-gradient-to-br from-red-200 to-pink-300 h-80 rounded-lg shadow-lg" onclick="window.location.href='shop.html#accessories'">
+                        <img src="images/acs1.jpg" alt="Accessories" style="width:100%; height:100%; object-fit: cover;">
+                        <div class="collection-overlay">
+                            <div class="text-center text-white">
+                                <div class="text-5xl mb-4"></div>
+                                <h3 class="font-playfair text-2xl font-bold mb-2">Accessories</h3>
+                                <p class="text-lg">Perfect Finishing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products / New Arrivals -->
+    <section class="py-20 cream-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="font-playfair text-5xl font-bold text-maroon mb-6">Featured Products</h2>
+                    <p class="text-xl text-charcoal max-w-2xl mx-auto">
+                        Discover our latest handcrafted pieces, each one unique and made with love
+                    </p>
+                </div>
+                
+                <div class="carousel-container flex space-x-6 pb-4">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <img src="images/lawnE1.jpg" alt="Embroidered Lawn Suit" style="width:100%; height:100%; object-fit: cover;">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Embroidered Lawn Suit</h3>
+                            <p class="text-charcoal mb-3">Beautiful floral embroidery with matching dupatta</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 12000</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <img src="images/velvet1.jpg" alt="Velvet Winter Suit" style="width:100%; height:100%; object-fit: cover;">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Velvet Winter Suit</h3>
+                            <p class="text-charcoal mb-3">Luxurious velvet with intricate thread work</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 22000</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <img src="images/party2.png" alt="Party Wear Dress" style="width:100%; height:100%; object-fit: cover;">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Party Wear Dress</h3>
+                            <p class="text-charcoal mb-3">Glamorous sequin work for special occasions</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 18,000</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <img src="images/casual2.jpg" alt="Casual Cotton Kurti" style="width:100%; height:100%; object-fit: cover;">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Casual Cotton Kurti</h3>
+                            <p class="text-charcoal mb-3">Comfortable daily wear with elegant prints</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 2,800</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <img src="images/formal2.webp" alt="Formal Office Wear" style="width:100%; height:100%; object-fit: cover;">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Formal Office Wear</h3>
+                            <p class="text-charcoal mb-3">Professional attire with modern cuts</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 6,500</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <img src="images/Bridal2.jpg" alt="Bridal Lehenga" style="width:100%; height:100%; object-fit: cover;">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Bridal Lehenga</h3>
+                            <p class="text-charcoal mb-3">Exquisite bridal wear with heavy embroidery</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 380000</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <video autoplay muted loop style="width:100%; height:100%; object-fit: cover;">
+                                <source src="video/Dup1.mp4" type="video/mp4">
+                                </video>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Embroidered Dupatta</h3>
+                            <p class="text-charcoal mb-3">Beautiful dupatta to complete your outfit</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 15000</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden min-w-80 flex-shrink-0">
+                        <div class="h-64">
+                            <video autoplay muted loop style="width:100%; height:100%; object-fit: cover;">
+                                <source src="video/lehanga1.mp4" type="video/mp4">
+                                </video>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-playfair text-xl font-bold text-maroon mb-2">Party Wear Lehanga</h3>
+                            <p class="text-charcoal mb-3">Elegant Lehanga Choli Hand Embriodery Aplic work</p>
+                            <p class="text-2xl font-bold text-charcoal mb-4">Rs. 68000</p>
+                            <a href="order.html" class="gold-bg text-white hover:bg-maroon px-6 py-3 rounded-lg font-semibold transition-colors w-full inline-block text-center">
+                                <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Behind-the-Scenes / Storytelling Section -->
+    <section class="py-20 cream-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h2 class="font-playfair text-5xl font-bold text-maroon mb-6">Craftsmanship Meets Elegance</h2>
+                        <p class="text-xl text-charcoal mb-6 leading-relaxed">
+                            For over four decades, Babar Gee Fashion has been synonymous with exceptional craftsmanship. 
+                            Every piece is meticulously handcrafted by our skilled artisans, combining traditional techniques 
+                            with contemporary designs.
+                        </p>
+                        <p class="text-lg text-charcoal mb-8 leading-relaxed">
+                            From intricate hand embroidery to precise machine work, each stitch tells a story of dedication, 
+                            passion, and the pursuit of perfection. Our boutique is where dreams take shape and elegance comes to life.
+                        </p>
+                        <a href="about.html" class="gold-bg text-white hover:bg-maroon px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center">
+                            <i class="fas fa-arrow-right mr-2"></i>Learn More About Us
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 fade-in">
+                        <div class="bg-gradient-to-br from-maroon to-gold h-64 rounded-lg flex items-center justify-center">
+                            <div class="text-center text-black">
+                                <div class="text-5xl mb-2">🪡</div>
+                                <p class="font-semibold">Hand Embroidery</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-gold to-maroon h-64 rounded-lg flex items-center justify-center">
+                            <div class="text-center text-black">
+                                <div class="text-5xl mb-2">✂️</div>
+                                <p class="font-semibold">Precision Cutting</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-pink-200 to-rose-300 h-64 rounded-lg flex items-center justify-center col-span-2">
+                            <div class="text-center text-charcoal">
+                                <section class=""text-center py-10 >
+                                <!--image small and square -->
+                                <img src="images/boutique.jpg" alt="" class="mx-auto w-100 h-100 object-cover rounded-full shadow-lg mb-6" />
+                                <p class="font-semibold text-lg">Our Beautiful Boutique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Snapshot / Expertise -->
+    <section class="py-20 blush-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="font-playfair text-5xl font-bold text-maroon mb-6">Our Expertise</h2>
+                    <p class="text-xl text-charcoal max-w-2xl mx-auto">
+                        Comprehensive fashion services tailored to your unique style and requirements
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <!-- Hand Embroidery -->
+                    <div class="text-center fade-in">
+                        <div class="service-icon gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-hand-sparkles text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Hand Embroidery</h3>
+                        <p class="text-charcoal">Intricate handwork that adds elegance to every piece</p>
+                    </div>
+
+                    <!-- Machine Embroidery -->
+                    <div class="text-center fade-in">
+                        <div class="service-icon gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-cog text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Machine Embroidery</h3>
+                        <p class="text-charcoal">Precision machine work for consistent quality</p>
+                    </div>
+
+                    <!-- Thread Embroidery -->
+                    <div class="text-center fade-in">
+                        <div class="service-icon gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-reel text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Thread Embroidery</h3>
+                        <p class="text-charcoal">Beautiful threadwork in various patterns and styles</p>
+                    </div>
+
+                    <!-- Stitching Services -->
+                    <div class="text-center fade-in">
+                        <div class="service-icon gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-cut text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Stitching Services</h3>
+                        <p class="text-charcoal">Expert tailoring for perfect fit and finish</p>
+                    </div>
+
+                    <!-- Bulk Orders -->
+                    <div class="text-center fade-in">
+                        <div class="service-icon gold-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Bulk Orders</h3>
+                        <p class="text-charcoal">International shipping for bulk and wholesale orders</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12 fade-in">
+                    <a href="services.html" class="gold-bg text-white hover:bg-maroon px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center">
+                        <i class="fas fa-arrow-right mr-2"></i>Explore All Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal / Promotional Banner -->
+<section class="promo-banner py-16 text-white relative overflow-hidden">
+    
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="video/bsilk.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Dark Overlay (for text readability) -->
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    
+    <!-- Text Content -->
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto fade-in">                
+            <h2 class="font-playfair text-5xl font-bold mb-6">✨ We Are Now Taking Orders! ✨</h2>
+            <p class="text-xl mb-8">
+
+                Worldwide delivery of customized & stitched outfits.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="shop.html#lawn" class="bg-white text-maroon hover:bg-gold hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-shopping-bag mr-2"></i>Shop Lawn Collection
+                </a>
+                <a href="order.html" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Instagram / Social Feed Integration -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="font-playfair text-5xl font-bold text-maroon mb-6">Follow Our Journey</h2>
+                    <p class="text-xl text-charcoal max-w-2xl mx-auto">
+                        Stay connected with our latest creations and behind-the-scenes moments
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Instagram Post 1 - Latest Lawn Collection -->
+                    <div class="instagram-post bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="window.open('https://www.instagram.com/p/DOGxzB_jDUv/?utm_source=ig_web_copy_link&igsh=ZXg5bm4ydjhjbm1r', '_blank')">
+                        <div class="relative">
+                            <!-- Placeholder Image - Replace with your actual image -->
+                            <div class="h-64 bg-gradient-to-br from-green-200 to-emerald-300 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <p class="font-semibold"><img src="images/img4.jpg"></p>
+                                </div>
+                            </div>
+                            <!-- Instagram Play Button for Videos -->
+                            <div class="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2">
+                                <i class="fab fa-instagram text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-gradient-to-br from-maroon to-gold rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-sm">BG</span>
+                                </div>
+                                <span class="font-semibold text-sm">babargeefashion</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">✨ Beautiful Sequence work with Stone On Silk fabrics. Perfect for the season! 🌸</p>
+                            <div class="flex items-center text-xs text-gray-500">
+                                <i class="far fa-heart mr-1"></i>
+                                <span class="mr-3">245 likes</span>
+                                <i class="far fa-comment mr-1"></i>
+                                <span>12 comments</span>
+                            </div>
+                        </div>
+                        <div class="instagram-overlay">
+                            <div class="text-center text-white">
+                                <i class="fab fa-instagram text-4xl mb-2"></i>
+                                <p class="font-semibold">View on Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Post 2 - Behind the Scenes Video -->
+                    <div class="instagram-post bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="window.open('https://www.instagram.com/reel/DOGx6NzDBp1/?utm_source=ig_web_copy_link&igsh=MTh1dG41b3loY3I3bw==', '_blank')">
+                        <div class="relative">
+                            <!-- Placeholder Video Thumbnail - Replace with your actual video -->
+                            <div class="h-64 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <p class="font-semibold"><video src="video/vid2.mp4"></p>
+                                </div>
+                            </div>
+                            <!-- Video Play Button -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-black bg-opacity-50 rounded-full p-4">
+                                    <i class="fas fa-play text-white text-2xl ml-1"></i>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2">
+                                <i class="fab fa-instagram text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-gradient-to-br from-maroon to-gold rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-sm">BG</span>
+                                </div>
+                                <span class="font-semibold text-sm">babargeefashion</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">🪡 Behind the scenes: Watch our skilled artisans create magic with every stitch! The art of hand embroidery at its finest. 🎨</p>
+                            <div class="flex items-center text-xs text-gray-500">
+                                <i class="far fa-heart mr-1"></i>
+                                <span class="mr-3">189 likes</span>
+                                <i class="far fa-comment mr-1"></i>
+                                <span>8 comments</span>
+                            </div>
+                        </div>
+                        <div class="instagram-overlay">
+                            <div class="text-center text-white">
+                                <i class="fab fa-instagram text-4xl mb-2"></i>
+                                <p class="font-semibold">View on Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Post 3 - Customer Feature -->
+                    <div class="instagram-post bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="window.open('https://www.instagram.com/p/DMQM2DFNnp5/?utm_source=ig_web_copy_link&igsh=cmQzaHIwdWdkYnFr', '_blank')">
+                        <div class="relative">
+                            <!-- Placeholder Customer Photo - Replace with your actual photo -->
+                            <div class="h-64 bg-gradient-to-br from-pink-200 to-rose-300 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <div class="text-6xl mb-2">👗</div>
+                                    <p class="font-semibold"><img src="images/reviews.jpg"></p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2">
+                                <i class="fab fa-instagram text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-gradient-to-br from-maroon to-gold rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-sm">BG</span>
+                                </div>
+                                <span class="font-semibold text-sm">babargeefashion</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">💫 Our beautiful customer looking absolutely stunning in our custom bridal outfit! Thank you for trusting us with your special day! 👰✨</p>
+                            <div class="flex items-center text-xs text-gray-500">
+                                <i class="far fa-heart mr-1"></i>
+                                <span class="mr-3">312 likes</span>
+                                <i class="far fa-comment mr-1"></i>
+                                <span>25 comments</span>
+                            </div>
+                        </div>
+                        <div class="instagram-overlay">
+                            <div class="text-center text-white">
+                                <i class="fab fa-instagram text-4xl mb-2"></i>
+                                <p class="font-semibold">View on Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Post 4 - Boutique Showcase -->
+                    <div class="instagram-post bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="window.open('https://www.instagram.com/reel/DMn9nirN-NV/?utm_source=ig_web_copy_link&igsh=MWx3Y214Y290cnBodA==', '_blank')">
+                        <div class="relative">
+                            <!-- Placeholder Boutique Photo - Replace with your actual photo -->
+                            <div class="h-64 bg-gradient-to-br from-purple-200 to-violet-300 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <p class="font-semibold"><img src="images/boutique.jpg"></p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-black bg-opacity-50 rounded-full p-2">
+                                <i class="fab fa-instagram text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-gradient-to-br from-maroon to-gold rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-sm">BG</span>
+                                </div>
+                                <span class="font-semibold text-sm">babargeefashion</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">🏪 Welcome to Babar Gee Fashion! Visit our boutique in Sukkur for the finest Pakistani fashion. Over 40 years of excellence! 🌟</p>
+                            <div class="flex items-center text-xs text-gray-500">
+                                <i class="far fa-heart mr-1"></i>
+                                <span class="mr-3">156 likes</span>
+                                <i class="far fa-comment mr-1"></i>
+                                <span>7 comments</span>
+                            </div>
+                        </div>
+                        <div class="instagram-overlay">
+                            <div class="text-center text-white">
+                                <i class="fab fa-instagram text-4xl mb-2"></i>
+                                <p class="font-semibold">View on Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12 fade-in">
+                    <a href="https://www.instagram.com/babargeefashion" target="_blank" class="gold-bg text-white hover:bg-maroon px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center">
+                        <i class="fab fa-instagram mr-2"></i>Follow Us on Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action / Place Order Section -->
+    <section class="py-20 maroon-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto fade-in">
+                <h2 class="font-playfair text-5xl font-bold mb-6">Order Your Custom Handcrafted Outfit Today!</h2>
+                <p class="text-xl mb-8 leading-relaxed">
+                    Ready to experience the finest in Pakistani fashion? Our expert craftsmen are waiting to create 
+                    your perfect outfit. From traditional to contemporary, we bring your vision to life with 
+                    unmatched quality and attention to detail.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="order.html" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                        <i class="fas fa-shopping-cart mr-2"></i>Order Now
+                    </a>
+                    <a href="contact.html" class="gold-bg text-maroon hover:bg-white hover:text-gold px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                        <i class="fas fa-envelope mr-2"></i>Contact Us
+                    </a>
+                    <a href="shop.html" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                        <i class="fas fa-shopping-bag mr-2"></i>Shop Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="charcoal-bg text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold text-gold mb-4">Babar Gee Fashion</h3>
+                    <p class="text-white mb-4">
+                        Handcrafted Pakistani fashion since 1982. Bringing elegance and tradition to the world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.facebook.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.pinterest.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-pinterest text-xl"></i></a>
+                        <a href="https://www.youtube.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="text-white hover:text-gold">About</a></li>
+                        <li><a href="shop.html" class="text-white hover:text-gold">Shop</a></li>
+                        <li><a href="Order.html" class="text-white hover:text-gold">Order Now</a></li>
+                        <li><a href="contact.html" class="text-white hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-white">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Near Imam Bargah, M. Shah Market<br>Neem Ki Chari, Sukkur</p>
+                        <p><i class="fas fa-phone mr-2"></i>+923153446770</p>
+                        <p><i class="fas fa-envelope mr-2"></i>babargeefashion@gmail.com</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Our Collections</h4>
+                    <ul class="space-y-2 text-white">
+                        <li><a href="shop.html#lawn" class="hover:text-gold">Lawn Collection</a></li>
+                        <li><a href="shop.html#winter" class="hover:text-gold">Winter Collection</a></li>
+                        <li><a href="shop.html#bridal" class="hover:text-gold">Bridal Wear</a></li>
+                        <li><a href="shop.html#party" class="hover:text-gold">Party Wear</a></li>
+                        <li><a href="shop.html#formal" class="hover:text-gold">Formal Wear</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-white">
+                <p>&copy; 2025 Babar Gee Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923153446770" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Carousel auto-scroll (optional)
+        const carousel = document.querySelector('.carousel-container');
+        let isScrolling = false;
+
+        // Auto-scroll carousel every 5 seconds
+        setInterval(() => {
+            if (!isScrolling && carousel) {
+                carousel.scrollBy({
+                    left: 320,
+                    behavior: 'smooth'
+                });
+                
+                // Reset to beginning if at end
+                if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 50) {
+                    setTimeout(() => {
+                        carousel.scrollTo({
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                    }, 3000);
+                }
+            }
+        }, 5000);
+
+        // Detect manual scrolling
+        carousel?.addEventListener('scroll', () => {
+            isScrolling = true;
+            clearTimeout(carousel.scrollTimeout);
+            carousel.scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+            }, 1000);
+        });
+
+        // Preload critical content
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any initialization code here
+            console.log('Babar Gee Fashion - Ultimate Boutique Homepage Loaded');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a23f4cc595c976',t:'MTc1NzAzODgyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
