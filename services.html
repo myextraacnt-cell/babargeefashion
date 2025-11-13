@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Babar Gee Fashion | Premium Pakistani Fashion Services</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(128, 0, 0, 0.6), rgba(128, 0, 0, 0.4));
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 198, 198, 0.3);
+            pointer-events: none;
+        }
+        
+        .sticky-nav {
+            transition: all 0.3s ease;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-card {
+            background: #F5C6C6;
+            min-width: 100%;
+        }
+        
+        .maroon-bg { background-color: #800000; }
+        .gold-bg { background-color: #D4AF37; }
+        .blush-bg { background-color: #F5C6C6; }
+        .cream-bg { background-color: #FDF5E6; }
+        .charcoal-bg { background-color: #333333; }
+        
+        .text-maroon { color: #800000; }
+        .text-gold { color: #D4AF37; }
+        .text-charcoal { color: #333333; }
+        
+        .hover\:text-gold:hover { color: #D4AF37; }
+        .hover\:text-maroon:hover { color: #800000; }
+        .hover\:bg-gold:hover { background-color: #D4AF37; }
+        .hover\:bg-maroon:hover { background-color: #800000; }
+        .hover\:bg-white:hover { background-color: #FFFFFF; }
+        
+        .detailed-service {
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Top Header -->
+    <div class="bg-black py-2 text-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="text-white">📞 +923153446770</span>
+                <span class="text-white">✉️ babargeefashion@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://www.instagram.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.pinterest.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+<nav class="blush-bg shadow-lg sticky top-0 z-50 sticky-nav" id="navbar">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <!-- Google Fonts link (paste this in <head> section) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- 🔸 Logo + Name -->
+<div style="display: flex; align-items: center; gap: 12px;">
+  <h1 style="
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: maroon;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+    white-space: nowrap;
+  ">
+    <span style="font-family: 'Great Vibes', cursive; color: #b22222; font-size: 48px;">Babar Gee Fashion</span>
+  </h1>
+
+  <img src="images/logo.png" alt="Babar Gee Fashion Logo"
+       style="width: 90px; height: 90px; object-fit: contain; animation: fadeIn 1.5s ease-in-out;">
+</div>
+
+<!-- Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+<!-- 🔸 Navigation Links -->
+    <div class="hidden md:flex space-x-8">
+      <a href="index.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Home</a>
+      <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-semibold">About</a>
+      <a href="shop.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Shop</a>
+      <a href="services.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Services</a>
+      <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Contact</a>
+    </div>
+
+    <!-- 🔸 Order Button + Mobile Toggle -->
+    <div class="flex items-center space-x-4">
+      <a href="order.html"
+         style="background-color: #81cbca;" 
+         class="text-white hover:bg-maroon px-6 py-2 rounded-lg font-semibold transition-colors">
+         <i class="fas fa-shopping-cart mr-2"></i>Order Now
+      </a>
+      <button class="md:hidden text-charcoal" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- 🔸 Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden pb-4 text-center">
+    <a href="index.html" class="block py-2 text-charcoal hover:text-gold">Home</a>
+    <a href="about.html" class="block py-2 text-charcoal hover:text-gold">About</a>
+    <a href="shop.html" class="block py-2 text-charcoal hover:text-gold">Shop</a>
+    <a href="services.html" class="block py-2 text-charcoal hover:text-gold">Services</a>
+    <a href="contact.html" class="block py-2 text-charcoal hover:text-gold">Contact</a>
+  </div>
+</nav>
+
+<!-- 🔸 Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+    <!-- Breadcrumb -->
+    <div class="bg-[#FDF5E6] py-3">
+  <div class="container mx-auto px-4">
+    <nav class="text-sm text-[#800000]">
+      <a href="index.html" class="text-[#800000] hover:text-[#D4AF37]">Home</a>
+      <span class="text-[#D4AF37] mx-2">></span>
+      <span class="text-[#800000] font-semibold" id="breadcrumb">Shop</span>
+    </nav>
+  </div>
+</div>
+
+
+    <!-- Page Header / Banner with Image -->
+<section class="relative h-96 flex items-center justify-center overflow-hidden">
+    
+    <!-- Image Background -->
+    <img src="images/servicesban.webp" alt="Banner Image" 
+         class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Optional Overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <!-- Text Content -->
+    <div class="relative z-10 text-center text-white px-4">
+        <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-4" id="pageTitle">
+              Our Services
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl mx-auto" id="pageSubtitle">
+            Crafting Your Dream Dresses | Bespoke Designs Tailored to Perfection | Global Shipping | DM to Create Your Unique Masterpiece!
+        </p>
+    </div>
+</section>
+
+
+
+    <!-- Introduction / Services Overview -->
+    <section class="py-16 cream-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-playfair text-4xl font-bold text-maroon mb-8">What We Offer</h2>
+                <p class="text-lg text-charcoal leading-relaxed">
+                    Babar Gee Fashion provides premium boutique services including hand-embroidered suits, custom stitched outfits, and international order fulfillment. We cater to both Pakistani and international clients with quality and style, ensuring every piece reflects our commitment to traditional craftsmanship and contemporary elegance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Core Offerings) -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-playfair text-4xl font-bold text-center text-maroon mb-12">Our Core Services</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service 1: Custom Stitched Suits -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="gold-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-cut text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Custom Stitched Suits</h3>
+                        <p class="text-charcoal">
+                            Perfectly tailored to your measurements with premium fabrics and expert craftsmanship. Each suit is custom-made to ensure the perfect fit and style.
+                        </p>
+                    </div>
+
+                    <!-- Service 2: Hand Embroidery -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="gold-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-hand-sparkles text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Hand Embroidery</h3>
+                        <p class="text-charcoal">
+                            Exquisite hand-embroidered designs created by skilled artisans. Traditional techniques combined with contemporary patterns for stunning results.
+                        </p>
+                    </div>
+
+                    <!-- Service 3: Maxis & Lehenga Designs -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="gold-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-tshirt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Maxis & Lehenga Designs</h3>
+                        <p class="text-charcoal">
+                            Elegant and fashionable maxis and lehengas for special occasions. From casual wear to bridal collections, we create stunning pieces.
+                        </p>
+                    </div>
+
+                    <!-- Service 4: Bulk Orders & International Shipping -->
+                    <div class="service-card bg-white p-8 rounded-lg shadow-lg text-center">
+                        <div class="gold-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-playfair text-xl font-bold text-maroon mb-4">Bulk Orders & International Shipping</h3>
+                        <p class="text-charcoal">
+                            Flexible minimum order quantities and reliable worldwide delivery. Perfect for boutiques, retailers, and international customers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Service Sections -->
+<!-- Section 1: Custom Stitched Suits with Image Tag -->
+<section class="py-16 cream-bg">
+    <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center detailed-service">
+                
+                <!-- Image using <img> -->
+                <div class="rounded-lg ov erflow-hidden flex items-center justify-center">
+                    <img src="images/Services/custom1.webp" alt="Custom Stitched Suit" class="w-full h-full object-cover">
+                    <!-- Optional overlay with icon/text -->
+                    <div class="absolute text-center bg-black bg-opacity-25 p-4 rounded">
+                        <div class="text-8xl mb-4"></div>
+                        <p class="text-white font-semibold text-lg"></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-6">Custom Stitched Suits</h3>
+                    <div class="space-y-4 text-charcoal text-lg">
+                        <p>
+                            Our custom stitched suits are crafted with precision and attention to detail. Each piece is tailored specifically to your measurements, ensuring a perfect fit that enhances your natural silhouette.
+                        </p>
+                        <p>
+                            We use only premium quality fabrics including lawn, chiffon, silk, and cotton. Our experienced tailors bring decades of expertise to every stitch, creating garments that are both comfortable and elegant.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-charcoal">
+                            <li>Perfect fit guaranteed with detailed measurements</li>
+                            <li>Premium quality fabrics and materials</li>
+                            <li>Traditional and contemporary designs available</li>
+                            <li>Complete sets with dupatta and accessories</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- Section 2: Hand Embroidery -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center detailed-service">
+
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-6">Hand Embriodery</h3>
+                    <div class="space-y-4 text-charcoal text-lg">
+                        <p>
+                            Our hand embroidery work represents the finest tradition of Pakistani craftsmanship. Each design is meticulously created by skilled artisans who have mastered the art of needle work over generations.
+                        </p>
+                        <p>
+                            From delicate floral patterns to intricate geometric designs, our embroidery adds elegance and sophistication to every garment. We use high-quality threads, beads, and embellishments to ensure lasting beauty.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-charcoal">
+                            <li>Traditional hand embroidery techniques</li>
+                            <li>Custom patterns and designs available</li>
+                            <li>Premium quality threads and embellishments</li>
+                            <li>Skilled artisans with decades of experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Section -->
+                <div class="order-1 lg:order-2 rounded-lg overflow-hidden flex items-center justify-center relative">
+                    <img src="images/Services/hm1.jpg" alt="Hand Embroidery" class="w-full h-full object-cover">
+                    <!-- Optional overlay with icon/text -->
+                    <div class="absolute text-center bg-black bg-opacity-25 p-4 rounded">
+                        <div class="text-8xl mb-4"></div>
+                        <p class="text-white font-semibold text-lg"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Section 3: Maxis & Lehengas -->
+<section class="py-16 cream-bg">
+    <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center detailed-service">
+
+                <!-- Image Section -->
+                <div class="rounded-lg overflow-hidden flex items-center justify-center relative">
+                    <img src="images/Services/Maxi.webp" alt="Maxis & Lehengas" class="w-full h-full object-cover">
+                    <!-- Optional overlay with icon/text -->
+                    <div class="absolute text-center bg-black bg-opacity-25 p-4 rounded">
+                        <div class="text-8xl mb-4"></div>
+                        <p class="text-white font-semibold text-lg"></p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div>
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-6">Maxis & Lehenga Designs</h3>
+                    <div class="space-y-4 text-charcoal text-lg">
+                        <p>
+                            Our collection of maxis and lehengas combines traditional Pakistani aesthetics with modern fashion sensibilities. Perfect for weddings, parties, and special occasions.
+                        </p>
+                        <p>
+                            Each piece is designed to make you feel confident and beautiful. From flowing maxis for elegant evening wear to elaborate bridal lehengas with intricate work, we create memorable pieces.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-charcoal">
+                            <li>Bridal and party wear lehengas</li>
+                            <li>Casual and formal maxis</li>
+                            <li>Custom color combinations available</li>
+                            <li>Matching accessories and jewelry consultation</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Section 4: Bulk Orders -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center detailed-service">
+
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <h3 class="font-playfair text-3xl font-bold text-maroon mb-6">Bulk Orders & International Shipping</h3>
+                    <div class="space-y-4 text-charcoal text-lg">
+                        <p>
+                            We specialize in bulk orders for boutiques, retailers, and fashion businesses worldwide. Our flexible minimum order quantities and competitive pricing make us the ideal partner for your business.
+                        </p>
+                        <p>
+                            With reliable international shipping and careful packaging, we ensure your orders reach you in perfect condition. We've successfully served customers across UK, USA, Canada, Australia, and many other countries.
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-charcoal">
+                            <li>Flexible minimum order quantities</li>
+                            <li>Competitive wholesale pricing</li>
+                            <li>Reliable international shipping</li>
+                            <li>Custom packaging and branding options</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Section -->
+                <div class="order-1 lg:order-2 rounded-lg overflow-hidden flex items-center justify-center relative">
+                    <img src="images/Services/bulk.jpg" alt="Bulk Orders & Shipping" class="w-full h-full object-cover">
+                    <!-- Optional overlay with icon/text -->
+                    <div class="absolute text-center bg-black bg-opacity-25 p-4 rounded">
+                        <div class="text-8xl mb-4"></div>
+                        <p class="text-white font-semibold text-lg"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Client Testimonials / Service Feedback -->
+    <section id="testimonials" class="py-16 blush-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-playfair text-4xl font-bold text-center text-maroon mb-12">What Our Clients Say</h2>
+                <div class="relative overflow-hidden">
+                    <div class="testimonial-slider" id="testimonialSlider">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card p-8 rounded-lg shadow-lg mx-4">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 maroon-bg rounded-full flex items-center justify-center text-white font-bold">
+                                    S
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-maroon text-lg">Safina Hayat</h4>
+                                    <p class="text-charcoal">London, UK</p>
+                                </div>
+                            </div>
+                            <p class="text-charcoal text-lg italic mb-4">
+                                "The custom stitched suits are absolutely perfect! The fit is amazing and the quality is outstanding. Delivery to UK was smooth and professional. Highly recommended!"
+                            </p>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card p-8 rounded-lg shadow-lg mx-4">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 maroon-bg rounded-full flex items-center justify-center text-white font-bold">
+                                    A
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-maroon text-lg">Noureen Wajahat</h4>
+                                    <p class="text-charcoal">Karachi, Pakistan</p>
+                                </div>
+                            </div>
+                            <p class="text-charcoal text-lg italic mb-4">
+                                "Excellent embroidery work! I ordered a bulk collection for my boutique and every piece was perfectly made. The attention to detail is remarkable. Very happy with the service!"
+                            </p>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card p-8 rounded-lg shadow-lg mx-4">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 maroon-bg rounded-full flex items-center justify-center text-white font-bold">
+                                    M
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-maroon text-lg">Maria Rodriguez</h4>
+                                    <p class="text-charcoal">Toronto, Canada</p>
+                                </div>
+                            </div>
+                            <p class="text-charcoal text-lg italic mb-4">
+                                "Beautiful lehenga for my daughter's wedding! The hand embroidery is stunning and the international shipping was reliable. Thank you for making our special day even more beautiful!"
+                            </p>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <button onclick="previousTestimonial()" class="absolute left-4 top-1/2 transform -translate-y-1/2 gold-bg text-maroon hover:bg-maroon hover:text-gold p-3 rounded-full">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextTestimonial()" class="absolute right-4 top-1/2 transform -translate-y-1/2 gold-bg text-maroon hover:bg-maroon hover:text-gold p-3 rounded-full">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="py-16 maroon-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-6">Order Your Custom Design Today!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Ready to experience our premium services? Contact us for custom designs, bulk orders, or any inquiries about our boutique services.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/923153446770" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order
+                </a>
+                <a href="mailto:babargeefashion@gmail.com" class="gold-bg text-maroon hover:bg-white hover:text-gold px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-2"></i> Email Us
+                </a>
+                <a href="index.html" class="border-2 border-white text-white hover:bg-white hover:text-maroon px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="font-playfair text-2xl font-bold text-charcoal mb-4">Stay Updated</h3>
+    <p class="text-charcoal mb-6">Get the latest designs and exclusive offers delivered to your inbox</p>
+
+    <form action="https://formspree.io/f/xblpznnr" method="POST" class="max-w-md mx-auto flex">
+      <input type="email" name="email" placeholder="Enter your email"
+             class="flex-1 px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:border-maroon cream-bg"
+             required>
+      <button type="submit"
+              class="gold-bg text-maroon hover:bg-maroon hover:text-gold px-6 py-3 rounded-r-lg font-semibold transition-colors">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer id="contact" class="charcoal-bg text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold text-gold mb-4">Babar Gee Fashion</h3>
+                    <p class="text-white mb-4">
+                        Handcrafted Pakistani fashion since 1982. Bringing elegance and tradition to the world.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.facebook.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.pinterest.com/babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-pinterest text-xl"></i></a>
+                        <a href="https://www.youtube.com/@babargeefashion" target="_blank" class="text-white hover:text-gold"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="text-white hover:text-gold">About</a></li>
+                        <li><a href="#shop.html" class="text-white hover:text-gold">Shop</a></li>
+                        <li><a href="#order.html" class="text-white hover:text-gold">Order Now</a></li>
+                        <li><a href="#contact.html" class="text-white hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-white">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Near Imam Bargah, M. Shah Market<br>Neem Ki Chari, Sukkur</p>
+                        <p><i class="fas fa-phone mr-2"></i>+923153446770</p>
+                        <p><i class="fas fa-envelope mr-2"></i>babargeefashion@gmail.com</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-white">
+                        <li>Custom Stitched Suits</li>
+                        <li>Hand Embroidery</li>
+                        <li>Designer Maxis & Lehengas</li>
+                        <li>Bulk Orders</li>
+                        <li>International Shipping</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-white">
+                <p>&copy; 2025 Babar Gee Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923153446770" class="floating-whatsapp bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Testimonial slider functionality
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        const totalTestimonials = testimonials.length;
+
+        function showTestimonial(index) {
+            const slider = document.getElementById('testimonialSlider');
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        }
+
+        function previousTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        }
+
+        // Auto-advance testimonials
+        setInterval(nextTestimonial, 5000);
+
+        // Smooth scrolling for internal links
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Add smooth scroll behavior to all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Newsletter subscription
+        document.querySelector('button[type="button"]').addEventListener('click', function() {
+            const email = this.previousElementSibling.value;
+            if (email) {
+                alert('Thank you for subscribing! We\'ll keep you updated with our latest services and designs.');
+                this.previousElementSibling.value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a1bbc55445c976',t:'MTc1NzAzMzQzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
