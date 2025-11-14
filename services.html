@@ -105,71 +105,81 @@
             </div>
         </div>
     </div>
+    <!-- Navigation Bar -->
+<nav id="navbar"
+     class="sticky top-0 z-50 bg-gold backdrop-blur-lg shadow-md transition-all duration-300">
 
-    <!-- Sticky Navigation -->
-<nav class="blush-bg shadow-lg sticky top-0 z-50 sticky-nav" id="navbar">
-  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-    
-    <!-- Google Fonts link (paste this in <head> section) -->
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <!-- LOGO + TITLE -->
+    <div class="flex items-center gap-3">
+      <img src="images/logo.png"
+           class="w-12 h-12 md:w-16 md:h-16 object-contain transition-all duration-300">
+           
+           <!-- Google Fonts link (paste this in <head> section) -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<!-- 🔸 Logo + Name -->
-<div style="display: flex; align-items: center; gap: 12px;">
-  <h1 style="
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 600;
-    color: maroon;
-    letter-spacing: 2px;
-    animation: fadeIn 2s ease-in-out;
-    white-space: nowrap;
-  ">
-    <span style="font-family: 'Great Vibes', cursive; color: #b22222; font-size: 48px;">Babar Gee Fashion</span>
+<span style="font-family: 'Great Vibes', cursive; color: #b22222; font-size: 48px;">Babar Gee Fashion</span>
   </h1>
+    </div>
 
-  <img src="images/logo.png" alt="Babar Gee Fashion Logo"
-       style="width: 90px; height: 90px; object-fit: contain; animation: fadeIn 1.5s ease-in-out;">
-</div>
-
-<!-- Animation -->
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-<!-- 🔸 Navigation Links -->
+    <!-- DESKTOP MENU -->
     <div class="hidden md:flex space-x-8">
-      <a href="index.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Home</a>
-      <a href="about.html" class="text-charcoal hover:text-gold transition-colors font-semibold">About</a>
-      <a href="shop.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Shop</a>
-      <a href="services.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Services</a>
-      <a href="contact.html" class="text-charcoal hover:text-gold transition-colors font-semibold">Contact</a>
+      <a href="index.html" class="text-charcoal hover:text-gold font-semibold">Home</a>
+      <a href="about.html" class="text-charcoal hover:text-gold font-semibold">About</a>
+      <a href="shop.html" class="text-charcoal hover:text-gold font-semibold">Shop</a>
+      <a href="services.html" class="text-charcoal hover:text-gold font-semibold">Services</a>
+      <a href="contact.html" class="text-charcoal hover:text-gold font-semibold">Contact</a>
     </div>
 
-    <!-- 🔸 Order Button + Mobile Toggle -->
-    <div class="flex items-center space-x-4">
-      <a href="order.html"
-         style="background-color: #81cbca;" 
-         class="text-white hover:bg-maroon px-6 py-2 rounded-lg font-semibold transition-colors">
-         <i class="fas fa-shopping-cart mr-2"></i>Order Now
-      </a>
-      <button class="md:hidden text-charcoal" onclick="toggleMobileMenu()">
-        <i class="fas fa-bars text-xl"></i>
-      </button>
-    </div>
+    <!-- DESKTOP ORDER BUTTON -->
+    <a href="order.html"
+       class="hidden md:inline-block bg-black text-white px-6 py-2 rounded-lg font-semibold
+              hover:bg-gold hover:text-maroon transition-colors duration-200 shadow-md">
+      <i class="fas fa-shopping-cart mr-2"></i>Order Now
+    </a>
 
+    <!-- 🔥 HAMBURGER BUTTON -->
+    <button onclick="toggleMobileMenu()"
+            class="md:hidden flex flex-col gap-1.5 group focus:outline-none">
+      <span class="w-7 h-1 bg-maroon rounded transition-all group-hover:w-8"></span>
+      <span class="w-7 h-1 bg-maroon rounded transition-all group-hover:w-8"></span>
+      <span class="w-7 h-1 bg-maroon rounded transition-all group-hover:w-8"></span>
+    </button>
   </div>
 
-  <!-- 🔸 Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden pb-4 text-center">
-    <a href="index.html" class="block py-2 text-charcoal hover:text-gold">Home</a>
-    <a href="about.html" class="block py-2 text-charcoal hover:text-gold">About</a>
-    <a href="shop.html" class="block py-2 text-charcoal hover:text-gold">Shop</a>
-    <a href="services.html" class="block py-2 text-charcoal hover:text-gold">Services</a>
-    <a href="contact.html" class="block py-2 text-charcoal hover:text-gold">Contact</a>
+  <!-- 🔥 MOBILE MENU -->
+  <div id="mobileMenu"
+       class="hidden flex flex-col bg-white shadow-lg md:hidden text-center overflow-hidden animate__animated animate__fadeIn">
+
+    <a href="index.html" class="py-3 text-charcoal hover:text-gold font-semibold">Home</a>
+    <a href="about.html" class="py-3 text-charcoal hover:text-gold font-semibold">About</a>
+    <a href="shop.html" class="py-3 text-charcoal hover:text-gold font-semibold">Shop</a>
+    <a href="services.html" class="py-3 text-charcoal hover:text-gold font-semibold">Services</a>
+    <a href="contact.html" class="py-3 text-charcoal hover:text-gold font-semibold">Contact</a>
+
+    <a href="order.html"
+       class="py-3 bg-black text-white hover:bg-gold hover:text-maroon font-semibold">
+      Order Now
+    </a>
   </div>
 </nav>
+
+<script>
+  function toggleMobileMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 80) {
+      nav.classList.add("shadow-xl", "bg-blush-bg/90");
+    } else {
+      nav.classList.remove("shadow-xl", "bg-blush-bg/90");
+    }
+  });
+</script>
+
 
 <!-- 🔸 Animation -->
 <style>
@@ -178,6 +188,7 @@
   to { opacity: 1; transform: scale(1); }
 }
 </style>
+
 
     <!-- Breadcrumb -->
     <div class="bg-[#FDF5E6] py-3">
@@ -702,3 +713,4 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a1bbc55445c976',t:'MTc1NzAzMzQzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
